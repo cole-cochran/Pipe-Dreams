@@ -44,7 +44,7 @@ a{
 /* to center card on mobile left 33px but for desktop its 800px need to display on desktop better */
 div.card{
   align-items: center;
-  left: 33px;
+  /* left: 33px; */
   top: 10px;
   background-color: #F23005;
   box-shadow: black 1px 3px 3px 3px;
@@ -52,5 +52,12 @@ div.card{
   text-shadow: black 2px 3px 1px;
   font-weight: bolder;
    padding: 15px;
+  
 }
 
+#centerCard{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

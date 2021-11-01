@@ -1,2 +1,3 @@
-DROP DATABASE IF EXISTS pipe_dreams;
-CREATE DATABASE pipe_dreams;
+DROP DATABASE IF EXISTS pipedream.db;
+CREATE DATABASE pipedream.db;
+

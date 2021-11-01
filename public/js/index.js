@@ -2,6 +2,7 @@
 const searchBtn = document.getElementById()
 const histBtn = document.getElementById()
 const searchTerm = document.getElementById().value.trim();
+const messageText = document.getElementById().value.trim();
 let longitude;
 let latitude;
 
@@ -20,6 +21,21 @@ function showPosition(position) {
     latitude = position.coords.latitude;
 };
 
+function addMessage(){
+    if (messageText){
+        const response = await fetch('/api/messages', {
+            method: 'POST',
+            body: JSON.stringify({ messageText, }),
+            headers: { 'Content-Type': 'application/json' },
+          });
+      
+          if (response.ok) {
+            document.location.replace('/');
+          } else {
+            alert('Failed to sign up.');
+          }
+    }
+}
 
 //replace with API function
 searchBtn.addEventListener('submit', function(event) {
@@ -38,4 +54,4 @@ searchBtn.addEventListener('submit', function(event) {
         }
       }
 
-})
+});

@@ -19,4 +19,8 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  get_date: () => {
+    const today = new Date();
+    return this.format_date(today);
+  }
 };

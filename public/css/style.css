@@ -1,0 +1,56 @@
+body{
+  background-color: #011F26;
+}
+/* style for login and search icons in Nav Bar */
+a{
+  color: #F23005;
+}
+/* style for nav bar */
+.bg-light{
+  padding: 0 0 5px 0;
+  background-color: #F2CB05 !important;
+  color: white;
+  text-shadow: white 1px 1px 1px;
+  
+}
+/* style for Find Gas Button */
+.custombutton1{
+  align-items: center;
+  top: 10px;
+  display: block;
+  margin: 20px;
+  background-color: #F28705;
+  box-shadow: black 1px 3px 3px 3px;
+  text-shadow: black 2px 3px 1px;
+  font-weight: bolder;
+}
+/* style for Favorite Locations button */
+.custombutton{
+  align-items: center;
+  top: 10px;
+  display: block;
+  margin: 20px;
+  background-color: #F23D4C;
+  box-shadow: black 1px 3px 3px 3px;
+  text-shadow: black 2px 3px 1px;
+  font-weight: bolder;
+
+}
+/* hover effects for Favorite Locations */
+.custombutton:hover{
+ background-color: red;
+}
+/* style for Report a price drop card */
+/* to center card on mobile left 33px but for desktop its 800px need to display on desktop better */
+div.card{
+  align-items: center;
+  left: 33px;
+  top: 10px;
+  background-color: #F23005;
+  box-shadow: black 1px 3px 3px 3px;
+  color: white;
+  text-shadow: black 2px 3px 1px;
+  font-weight: bolder;
+   padding: 15px;
+}
+

@@ -5,7 +5,7 @@ const User = require('./User')
 
 class User_history extends Model {}
 
-Message.init(
+User_history.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,7 +17,7 @@ Message.init(
       type: DataTypes.DATETIME,
       allowNull: false,
     },
-    zip: {
+    location_name: {
       type: DataTypes.TEXT,
     //   allowNull: false,
     },

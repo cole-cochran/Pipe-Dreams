@@ -1,12 +1,15 @@
 const router = require('express').Router();
 const Message = require('../../models/Message');
+const User = require('../../models/User');
 
-// The `/api/categories` endpoint
+// The `/api/messages` endpoint
 
 //find all user Messages
 router.get('/', async (req, res) => {
   try {
-    const messageData = await Message.findAll()
+    const messageData = await Message.findAll({
+      order: ['date', 'DESC']
+    })
     res.status(200).json(messageData);
   } catch (err) {
     res.status(500).json(err);
@@ -17,7 +20,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const messageData = await Message.findByPk(req.params.id, {
-      include: [{ model: Product }]
+      include: [{ model: User }]
     });
 
     if (!messageData) {

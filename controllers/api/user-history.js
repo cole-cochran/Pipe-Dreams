@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const UserHistory = require('../../models/User_history');
+const User = require('../../models/User')
 
 // The `/api/categories` endpoint
 
@@ -16,8 +17,8 @@ router.get('/', async (req, res) => {
 // find favorite by 'id' - can be changed to location? or name?
 router.get('/:id', async (req, res) => {
   try {
-    const favoriteData = await UserHistory.findByPk(req.params.id, {
-      include: [{ model: Product }]
+    const favoriteData = await User.findByPk(req.params.id, {
+      include: [{ model: UserHistory }]
     });
 
     if (!favoriteData) {
@@ -35,7 +36,10 @@ router.get('/:id', async (req, res) => {
 // save a new favorite
 router.post('/', async (req, res) => {
   try {
-    const favoriteData = await UserHistory.create(req.body);
+    const favoriteData = await UserHistory.create({
+      user_id: req.body.user_id,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude});
     res.status(200).json(favoriteData);
   } catch (err) {
     res.status(400).json(err);

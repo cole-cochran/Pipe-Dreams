@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 const User = require('./User')
 
-class Message extends Model {}
+class User_history extends Model {}
 
 Message.init(
   {
@@ -17,15 +17,9 @@ Message.init(
       type: DataTypes.DATETIME,
       allowNull: false,
     },
-    text: {
+    zip: {
       type: DataTypes.TEXT,
     //   allowNull: false,
-    },
-    image_url: {
-      type: DataTypes.STRING,
-      validate: {
-        isUrl,
-      },
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -42,8 +36,8 @@ Message.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'message',
+    modelName: 'user_history',
   }
 );
 
-module.exports = Message;
+module.exports = User_history;

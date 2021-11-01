@@ -28,7 +28,15 @@ Message.init(
             model: User,
             key: 'id'
         }
-    }
+    },
+    longitude: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    latitude: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
 

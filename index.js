@@ -14,6 +14,6 @@ var map = new H.Map(
     center: { lng: -97.76370970945004, lat: 30.279820357640524 },
   }
 );
-document.getElementById("mapContainer").innerHTML = map
+document.getElementById("mapContainer").innerHTML = map;
 // Create the default UI:
 var ui = H.ui.UI.createDefault(map, defaultLayers);

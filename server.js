@@ -9,7 +9,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-// const io = require('socket.io').listen(server);
+
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -55,11 +55,6 @@ io.on('connection', (socket) => {
   socket.on('chat message', async (msg) => {
     console.log('message: ' + msg);
     io.emit('chat message', msg);
-    await fetch('/api/messages', {
-      method: 'POST',
-      body: JSON.stringify({ msg }),
-      headers: { 'Content-Type': 'application/json' },
-    })
 
   });
 });

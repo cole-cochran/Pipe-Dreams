@@ -161,3 +161,36 @@ h2{
   max-width: 500px;
   width: 500px;
 } */
+
+/* ------------------------------------------Search for gas near me page-------------------------- */
+#header{
+  position: relative;
+  left: 560px;
+}
+
+#searchBar{
+  position: relative;
+  top: 100px;
+  left: 500px;
+  max-width: 400px;
+  
+}
+
+#gpsIcon{
+  color: blue;
+  position: relative;
+  top: 200px;
+  left: 500px;
+}
+
+#favIcon{
+  color: red;
+  position: relative;
+  left: 100px;
+  top: 300px;
+}
+#gpsTxt{
+color:white;
+position: relative;
+left: 100px;
+}

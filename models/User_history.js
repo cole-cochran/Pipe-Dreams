@@ -14,7 +14,7 @@ User_history.init(
       autoIncrement: true,
     },
     date: {
-      type: DataTypes.DATETIME,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     location_name: {

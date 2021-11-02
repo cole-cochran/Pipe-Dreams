@@ -1,9 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Message, User_history } = require('../models');
+const { User, Message } = require('../models');
+const UserHistory = require('../models/User_history')
 
 const userData = require('./userData.json');
 const messageData = require('./messageData.json');
-const favoriteData = require('./userHistoryData.json');
+const userHistoryData = require('./userHistoryData.json');
 
 
 const seedDatabase = async () => {
@@ -26,7 +27,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const userHistory = await User_history.bulkCreate(favoriteData, {
+  const userHistory = await UserHistory.bulkCreate(userHistoryData, {
     individualHooks: true,
     returning: true,
   });

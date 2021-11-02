@@ -1,17 +1,23 @@
 [
   {
     "location_name": "Shell on Medical",
+    "date":"10/31/21",
     "latitude": "",
-    "longitude": ""
+    "longitude": "",
+    "user_id": 1
   },
   {
-    "name": "Exxon on Parmer",
+    "location_name": "Exxon on Parmer",
+    "date":"10/31/21",
     "latitude": "",
-    "longitude": ""
+    "longitude": "",
+    "user_id": 2
   },
   {
-    "name": "Valero near HEB",
+    "location_name": "Valero near HEB",
+    "date":"11/01/21",
     "latitude": "",
-    "longitude": ""
+    "longitude": "",
+    "user_id": 3
   }
 ]

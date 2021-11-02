@@ -52,9 +52,14 @@ io.on('connection', (socket) => {
 });
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
+  socket.on('chat message', async (msg) => {
     console.log('message: ' + msg);
     io.emit('chat message', msg);
+    await fetch('/api/messages', {
+      method: 'POST',
+      body: JSON.stringify({ msg }),
+      headers: { 'Content-Type': 'application/json' },
+    })
 
   });
 });
@@ -63,7 +68,4 @@ sequelize.sync({ force: false }).then(() => {
   server.listen(PORT, () => console.log('Now listening'));
 });
 
-// server.listen(PORT, () => {
-//   console.log('listening on *:3001');
-// });
 

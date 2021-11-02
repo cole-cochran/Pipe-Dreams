@@ -14,7 +14,7 @@ Message.init(
       autoIncrement: true,
     },
     date: {
-      type: DataTypes.DATETIME,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     text: {
@@ -24,7 +24,7 @@ Message.init(
     image_url: {
       type: DataTypes.STRING,
       validate: {
-        isUrl,
+        isUrl: true,
       },
     },
     user_id: {

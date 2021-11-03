@@ -9,6 +9,7 @@ async function archiveMsg(msg) {
         axios.post('http://localhost:3001/api/messages', 
         //   headers: { 'Content-Type': 'application/json' },
           {
+            //   user_id: req.session.user_id
               user_id: 1,
               text: msg,
           }

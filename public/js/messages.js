@@ -8,10 +8,10 @@ async function archiveMsg(msg) {
         // const response = await 
         axios.post('http://localhost:3001/api/messages', 
         //   headers: { 'Content-Type': 'application/json' },
-          JSON.stringify({
+          {
               user_id: 1,
               text: msg,
-          })
+          }
         ).then(function(response){
             console.log('response = ',response)
         }).catch((err) => {

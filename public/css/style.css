@@ -1,16 +1,19 @@
 body{
   background-color: #011F26;
 }
+
+
 /* style for login and search icons in Nav Bar */
 a{
   color: #F23005;
 }
 /* style for nav bar */
 .bg-light{
+  position: relative;
   padding: 0 0 5px 0;
   background-color: #F2CB05 !important;
   color: white;
-  text-shadow: white 1px 1px 1px;
+  text-shadow: rgb(2, 2, 2) 1px 1px 1px;
   
 }
 /* style for Find Gas Button */
@@ -40,17 +43,154 @@ a{
 .custombutton:hover{
  background-color: red;
 }
+
 /* style for Report a price drop card */
 /* to center card on mobile left 33px but for desktop its 800px need to display on desktop better */
 div.card{
   align-items: center;
-  left: 33px;
+  /* left: 33px; */
   top: 10px;
   background-color: #F23005;
   box-shadow: black 1px 3px 3px 3px;
   color: white;
   text-shadow: black 2px 3px 1px;
   font-weight: bolder;
-   padding: 15px;
+   /* padding: 15px; */
+  
 }
 
+#centerCard{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newCard{
+  padding: 15px;
+}
+
+.imageAjustments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* -------------------------------- User Login Page------------------------------------------------------------------ */
+
+
+.signup{
+  display: flex;
+  color: white;
+  /* max-width: 300px; */
+  /* padding: 30px; */
+}
+
+.login{
+  display: flex;
+  color: white;
+  /* max-width: 300px; */
+  /* padding: 30px; */
+}
+
+.inboxIcon{
+  display: block;
+  color: #F28705;
+  /* padding:20px; */
+  position: relative;
+  left: 200px;
+  top: 25px;
+  
+  /* box-shadow: thistle 2px 2px 2px 1px; */
+  /* border: thistle; */
+  
+}
+
+#mailboxText{
+  color: white;
+  position: relative;
+  left: 210px;
+  top: 16px;
+  /* left: 38px;
+  bottom: 30px; */
+  
+}
+
+.shareIcon{
+  color: white;
+  /* padding: 20px; */
+  display: block;
+  /* align-items: center;
+  /* left: 100px; */
+  position: relative; 
+  left: 440px;
+
+  bottom: 100px;
+  /* left: 600px; */ 
+}
+
+
+#shareBtn{
+  color: white;
+  position: relative;
+  /* left: 620px;
+  bottom: 180px; */
+  left: 450px;
+  bottom: 100px;
+}
+
+
+h2{
+  padding: 25px;
+  color: yellow;
+  
+}
+
+#header{
+  color: #F23005;
+  display: block;
+  position: relative;
+  left: 155px;
+  text-shadow: black;
+}
+
+
+.forms{
+  display: block;
+
+}
+/* .iconDiv{
+  max-width: 500px;
+  width: 500px;
+} */
+
+/* ------------------------------------------Search for gas near me page-------------------------- */
+#header{
+  position: relative;
+  left: 560px;
+}
+
+#searchBar{
+  position: relative;
+  top: 100px;
+  left: 500px;
+  max-width: 400px;
+  
+}
+
+#gpsIcon{
+  color: blue;
+  position: relative;
+  top: 200px;
+  left: 500px;
+}
+
+#favIcon{
+  color: red;
+  position: relative;
+  left: 100px;
+  top: 300px;
+}
+#gpsTxt{
+color:white;
+position: relative;
+left: 100px;
+}

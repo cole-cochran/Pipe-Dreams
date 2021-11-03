@@ -21,9 +21,18 @@ async function archiveMsg(msg) {
 }
 
 
-async function renderMsg() {
+async function renderMessages() {
     axios.get('http://localhost:3001/api/messages').then(function(response){
         console.log('response = ',response)
+    }).catch((err) => {
+        console.log('error = ',err)
+    });
+}
+
+async function renderMsg(msg) {
+    axios.get(`http://localhost:3001/api/users/${req.session.user_id}`)
+    .then(function (response){
+        return `${response.username}: ${msg}`
     }).catch((err) => {
         console.log('error = ',err)
     });

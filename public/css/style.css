@@ -68,6 +68,16 @@ a{
  background-color: red;
 }
 
+.heartIcon{
+position: relative;
+right: 20px;
+}
+
+.searchIcon{
+  position: relative;
+  right: 65px;
+}
+
 /* style for Report a price drop card */
 div.card.newCard:hover{
   background-color: yellow;

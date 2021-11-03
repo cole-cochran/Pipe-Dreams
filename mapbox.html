@@ -6,33 +6,46 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
-</head>
-<body>
 <!-- Load the `mapbox-gl-geocoder` plugin. -->
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
- 
+<link rel="stylesheet" href="./public/css/mapbox-geo.css" type="text/css">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+<link rel="stylesheet" href="./public/css/mapbox-dir.css" type="text/css">
 <div id="map"></div>
- 
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 50%; bottom: 0; width: 50%; }
+</style>
+
+</head>
+<body> 
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoiY29sZS1jb2NocmFuIiwiYSI6ImNrdmlnZmtkMjBicGIyb3BrdWxsdzI0aW4ifQ.j8T0PTzOZhOeFHglpSASyw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY29sZS1jb2NocmFuIiwiYSI6ImNrdmlnZmtkMjBicGIyb3BrdWxsdzI0aW4ifQ.j8T0PTzOZhOeFHglpSASyw';
 const map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
 center: [-97.76370970945004, 30.2672],
 zoom: 13
 });
- 
+
 // Add the control to the map.
 map.addControl(
 new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
+mapboxgl: mapboxgl,
+
+}),
+'top-right'
+);
+map.addControl(
+new MapboxDirections({
+accessToken: mapboxgl.accessToken,
+}),
+'top-left'
+);
+map.addControl(
+new mapboxgl.FullscreenControl(),
+'bottom-right'
 );
 </script>
  

@@ -4,16 +4,12 @@ const {format_date, format_amount, get_emoji, get_date} = require('../../utils/h
 
 //post message to DB
 async function archiveMsg(msg) {
-    const today = new Date();
-    const date = format_date(today);
-    
-    
+
         // const response = await 
         axios.post('http://localhost:3001/api/messages', 
         //   headers: { 'Content-Type': 'application/json' },
           JSON.stringify({
-            //   user_id: 1,
-            //   date: date,
+              user_id: 1,
               text: msg,
           })
         ).then(function(response){

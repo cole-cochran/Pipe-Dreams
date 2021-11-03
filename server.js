@@ -9,6 +9,8 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const {archiveMsg, renderMsg} = require('./public/js/messages')
+const axios = require('axios').default;
 
 
 const sequelize = require('./config/connection');
@@ -55,6 +57,8 @@ io.on('connection', (socket) => {
   socket.on('chat message', async (msg) => {
     console.log('message: ' + msg);
     io.emit('chat message', msg);
+    archiveMsg(msg);
+    // renderMsg();
 
   });
 });

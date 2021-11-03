@@ -18,15 +18,6 @@ async function archiveMsg(msg) {
         }).catch((err) => {
             console.log('error = ',err)
         });
-      
-    //     if (response.ok) {
-    //     //   document.location.replace('/');
-    //     console.log('message archived')
-    //     } else {
-    //       alert(response.statusText);
-    //     }
-    //   ;
-      
 }
 
 
@@ -36,19 +27,6 @@ async function renderMsg() {
     }).catch((err) => {
         console.log('error = ',err)
     });
-    // const response = await fetch('/api/messages', {
-    //     method: 'GET',
-    //     headers: { 'Content-Type': 'application/json' },
-    //   });
-    
-    //   if (response.ok) {
-    //   //   document.location.replace('/');
-    // //   console.log('message archived')
-    //   } else {
-    //     alert(response.statusText);
-    //   }
-    // ;
-
 }
 
 module.exports = {archiveMsg, renderMsg}

@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 const User = require('./User')
@@ -15,6 +15,7 @@ Message.init(
     },
     date: {
       type: DataTypes.DATE,
+      defaultValue: Sequelize.NOW,
       allowNull: false,
     },
     text: {

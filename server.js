@@ -9,7 +9,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-const {archiveMsg} = require('./public/js/messages')
+const {archiveMsg, renderMsg} = require('./public/js/messages')
 const axios = require('axios').default;
 
 
@@ -58,6 +58,7 @@ io.on('connection', (socket) => {
     console.log('message: ' + msg);
     io.emit('chat message', msg);
     archiveMsg(msg);
+    // renderMsg();
 
   });
 });

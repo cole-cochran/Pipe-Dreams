@@ -8,40 +8,50 @@ async function archiveMsg(msg) {
     const date = format_date(today);
     
     
-        const response = await axios.post('/api/messages', 
+        // const response = await 
+        axios.post('http://localhost:3001/api/messages', 
         //   headers: { 'Content-Type': 'application/json' },
           JSON.stringify({
-              user_id: 1,
-              date: date,
+            //   user_id: 1,
+            //   date: date,
               text: msg,
           })
-        );
+        ).then(function(response){
+            console.log('response = ',response)
+        }).catch((err) => {
+            console.log('error = ',err)
+        });
       
-        if (response.ok) {
-        //   document.location.replace('/');
-        console.log('message archived')
-        } else {
-          alert(response.statusText);
-        }
-      ;
+    //     if (response.ok) {
+    //     //   document.location.replace('/');
+    //     console.log('message archived')
+    //     } else {
+    //       alert(response.statusText);
+    //     }
+    //   ;
       
 }
 
 
 async function renderMsg() {
-    const response = await fetch('/api/messages', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      });
+    axios.get('http://localhost:3001/api/messages').then(function(response){
+        console.log('response = ',response)
+    }).catch((err) => {
+        console.log('error = ',err)
+    });
+    // const response = await fetch('/api/messages', {
+    //     method: 'GET',
+    //     headers: { 'Content-Type': 'application/json' },
+    //   });
     
-      if (response.ok) {
-      //   document.location.replace('/');
-    //   console.log('message archived')
-      } else {
-        alert(response.statusText);
-      }
-    ;
+    //   if (response.ok) {
+    //   //   document.location.replace('/');
+    // //   console.log('message archived')
+    //   } else {
+    //     alert(response.statusText);
+    //   }
+    // ;
 
 }
 
-module.exports = {archiveMsg}
+module.exports = {archiveMsg, renderMsg}

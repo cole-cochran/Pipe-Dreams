@@ -1,17 +1,37 @@
 body{
   background-color: #011F26;
 }
-/* style for login and search icons in Nav Bar */
+
+/* --------------------------------HOME PAGE STYLES-------------------------------------------------------------------------- */
+
+
+/* style for login icon in Nav Bar */
 a{
-  color: #F23005;
+  color: black;
 }
 /* style for nav bar */
 .bg-light{
+  position: relative;
   padding: 0 0 5px 0;
   background-color: #F2CB05 !important;
   color: white;
-  text-shadow: white 1px 1px 1px;
+  text-shadow: rgb(255, 255, 255) 1px 1px 1px;
+  font-size: large;
   
+}
+#headerTitle{
+  color: red;
+  font-size: xx-large;
+  
+}
+
+.shareBtn{
+  color: #011F26;
+  text-shadow: white 1px 1px 1px 1px;
+}
+
+.shareBtn:hover{
+  color: red;
 }
 /* style for Find Gas Button */
 .custombutton1{
@@ -23,6 +43,10 @@ a{
   box-shadow: black 1px 3px 3px 3px;
   text-shadow: black 2px 3px 1px;
   font-weight: bolder;
+  max-width: 475px;
+  position: relative;
+  left: 471px;
+  margin-top: 50px;
 }
 /* style for Favorite Locations button */
 .custombutton{
@@ -34,23 +58,199 @@ a{
   box-shadow: black 1px 3px 3px 3px;
   text-shadow: black 2px 3px 1px;
   font-weight: bolder;
+  max-width: 475px;
+  position: relative;
+  left: 471px;
+  
 
 }
 /* hover effects for Favorite Locations */
 .custombutton:hover{
  background-color: red;
 }
+
+.heartIcon{
+position: relative;
+right: 20px;
+}
+
+.searchIcon{
+  position: relative;
+  right: 65px;
+}
+
 /* style for Report a price drop card */
-/* to center card on mobile left 33px but for desktop its 800px need to display on desktop better */
+div.card.newCard:hover{
+  background-color: yellow;
+  color: red;
+}
+
 div.card{
   align-items: center;
-  left: 33px;
   top: 10px;
   background-color: #F23005;
   box-shadow: black 1px 3px 3px 3px;
   color: white;
   text-shadow: black 2px 3px 1px;
   font-weight: bolder;
-   padding: 15px;
+  max-width: 800px;
+  max-height: 400px;
+  margin-top: 20px;
+  font-size: 25px;
+  
+}
+/* adjust card with gas station image */
+#centerCard{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.newCard{
+  padding: 15px;
+}
+
+.imageAjustments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  max-height: 300px;
+}
+
+/* -------------------------------- User Sign Up Page------------------------------------------------------------------- */
+.signup{
+  display: flex;
+  color: white;
+  max-width: 800px;
+  max-height: 500px; 
+  padding: 30px;
+  position: relative;
+  left: 450px;
+  top: 80px;
+}
+
+/* -------------------------------- User Login Page------------------------------------------------------------------ */
+
+
+
+
+.login{
+  display: flex;
+  color: white;
+  max-width: 800px;
+  max-height: 500px; 
+  padding: 30px;
+  position: relative;
+  left: 450px;
+  top: 80px;
+}
+
+/* --------------------- LOG IN OR SIGN UP PAGE--------------------------------------- */
+.classLogin :hover{
+  color: red;
+}
+.classLogin{
+  position: fixed;
+  left: 550px;
+  top: 200px;
+  
+}
+
+#middle{
+  position: fixed;
+  left: 725px;
+  color: red;
+  font-size: 40px;
+  top: 210px;
+  
+}
+
+.classSignup{
+position: fixed;
+left: 800px;
+bottom: 464px;
+
+}
+
+/* ---------------------------------------------login and sign up forms------------------------------------ */
+#header{
+  color: #F23005;
+  display: block;
+  position: relative;
+  left: 550px;
+  text-shadow: black;
+ 
+}
+
+
+h2{
+  padding: 25px;
+  color: yellow;
+  
+}
+
+
+
+.forms{
+  display: block;
+
+}
+
+
+/* ------------------------------------------Search for gas near me page-------------------------- */
+
+
+#searchBar{
+  position: relative;
+  top: 100px;
+  left: 500px;
+  max-width: 400px;
+  
+}
+
+#gpsIcon{
+  color: blue;
+  position: relative;
+  top: 200px;
+  left: 500px;
+}
+
+#favIcon{
+  color: red;
+  position: relative;
+  left: 100px;
+  top: 300px;
+}
+#gpsTxt{
+color:white;
+position: relative;
+left: 100px;
+}
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+}

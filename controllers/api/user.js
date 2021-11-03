@@ -30,54 +30,78 @@ router.get('/:id', async (req, res) => {
 
 });
 
-// create a new user
+// CREATE new user
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
-    res.status(200).json(userData);
+    const dbUserData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    // Set up sessions with a 'loggedIn' variable set to `true`
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.user_id
+
+      res.status(200).json(dbUserData);
+    });
   } catch (err) {
-    res.status(400).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
-//update a user's information
-router.put('/:id', async (req, res) => {
+// Login
+router.post('/login', async (req, res) => {
   try {
-    const userData = await User.update(req.body, {
+    const dbUserData = await User.findOne({
       where: {
-        id: req.params.id,
+        email: req.body.email,
       },
     });
-    if (!userData[0]) {
-      res.status(404).json({ message: 'No user with this id!' });
+
+    if (!dbUserData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-    res.status(200).json(userData);
+
+    const validPassword = await dbUserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+
+    // Once the user successfully logs in, set up the sessions variable 'loggedIn'
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+
+      res
+        .status(200)
+        .json({ user: dbUserData, message: 'You are now logged in!' });
+    });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-//delete a user by id
-// 'archive' user instead, like what FB does?
-router.delete('/:id', async (req, res) => {
-  try {
-    const userData = await User.destroy({
-      where: {
-        id: req.params.id
-      }
+// Logout
+router.post('/logout', (req, res) => {
+  // When the user logs out, destroy the session
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
     });
-
-    if (!userData) {
-      res.status(404).json({ message: 'No user found with this id!' });
-      return;
-    }
-
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(500).json(err);
+  } else {
+    res.status(404).end();
   }
-
 });
 
 module.exports = router;

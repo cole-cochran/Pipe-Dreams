@@ -4,14 +4,19 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const app = express();
+const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const {archiveMsg, renderMsg} = require('./public/js/messages')
+const axios = require('axios').default;
+
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const app = express();
+
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
@@ -35,13 +40,34 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
+app.use('*/css',express.static('public/css'));
+app.use('*/js',express.static('public/js'));
+app.use('*/images',express.static('public/images'));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
+
+io.on('connection', (socket) => {
+  console.log('a user connected!');
+});
+
+io.on('connection', (socket) => {
+  socket.on('chat message', async (msg) => {
+    console.log('message: ' + msg);
+    io.emit('chat message', renderMsg(msg));
+    archiveMsg(msg);
+    // renderMsg();
+
+  });
+});
+
+sequelize.sync({ force: false }).then(() => {
+  server.listen(PORT, () => console.log('Now listening'));
+});
 
 

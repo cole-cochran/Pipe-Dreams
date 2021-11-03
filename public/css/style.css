@@ -147,50 +147,41 @@ div.card{
   top: 80px;
 }
 
-.inboxIcon{
+/* --------------------- LOG IN OR SIGN UP PAGE--------------------------------------- */
+.classLogin :hover{
+  color: red;
+}
+.classLogin{
+  position: fixed;
+  left: 550px;
+  top: 200px;
+  
+}
+
+#middle{
+  position: fixed;
+  left: 725px;
+  color: red;
+  font-size: 40px;
+  top: 210px;
+  
+}
+
+.classSignup{
+position: fixed;
+left: 800px;
+bottom: 464px;
+
+}
+
+/* ---------------------------------------------login and sign up forms------------------------------------ */
+#header{
+  color: #F23005;
   display: block;
-  color: #F28705;
-  /* padding:20px; */
   position: relative;
-  left: 200px;
-  top: 25px;
-  
-  /* box-shadow: thistle 2px 2px 2px 1px; */
-  /* border: thistle; */
-  
-}
-
-#mailboxText{
-  color: white;
-  position: relative;
-  left: 210px;
-  top: 16px;
-  /* left: 38px;
-  bottom: 30px; */
-  
-}
-
-.shareIcon{
-  color: white;
-  /* padding: 20px; */
-  display: block;
-  /* align-items: center;
-  /* left: 100px; */
-  position: relative; 
-  left: 440px;
-
-  bottom: 100px;
-  /* left: 600px; */ 
-}
-
-
-#shareBtn{
-  color: white;
-  position: relative;
-  /* left: 620px;
-  bottom: 180px; */
-  left: 450px;
-  bottom: 100px;
+  left: 550px;
+  text-shadow: black;
+ 
 }
 
 
@@ -200,13 +191,6 @@ h2{
   
 }
 
-#header{
-  color: #F23005;
-  display: block;
-  position: relative;
-  left: 155px;
-  text-shadow: black;
-}
 
 
 .forms{
@@ -219,10 +203,7 @@ h2{
 } */
 
 /* ------------------------------------------Search for gas near me page-------------------------- */
-#header{
-  position: relative;
-  left: 560px;
-}
+
 
 #searchBar{
   position: relative;

@@ -10,6 +10,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 const {archiveMsg} = require('./public/js/messages')
+const axios = require('axios').default;
 
 
 const sequelize = require('./config/connection');

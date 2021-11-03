@@ -14,7 +14,7 @@ async function archiveMsg(msg) {
               text: msg,
           }
         ).then(function(response){
-            console.log('response = ',response)
+            console.log('message archived')
         }).catch((err) => {
             console.log('error = ',err)
         });
@@ -32,6 +32,8 @@ async function renderMessages() {
 async function renderMsg(msg) {
     axios.get(`http://localhost:3001/api/users/${req.session.user_id}`)
     .then(function (response){
+        console.log('response = ',response)
+        console.log('msg = ',msg)
         return `${response.username}: ${msg}`
     }).catch((err) => {
         console.log('error = ',err)

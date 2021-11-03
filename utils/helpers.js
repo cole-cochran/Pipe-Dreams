@@ -21,6 +21,6 @@ module.exports = {
   },
   get_date: () => {
     const today = new Date();
-    return this.format_date(today);
+    return format_date(today);
   }
 };

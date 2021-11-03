@@ -32,8 +32,13 @@ map.addControl(
 new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
 mapboxgl: mapboxgl
-})
-);
+}),
+map.addControl(
+new MapboxDirections({
+accessToken: mapboxgl.accessToken
+}),
+'top-left'
+))
 </script>
  
 </body>

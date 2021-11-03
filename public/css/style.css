@@ -15,8 +15,22 @@ a{
   padding: 0 0 5px 0;
   background-color: #F2CB05 !important;
   color: white;
-  text-shadow: rgb(2, 2, 2) 1px 1px 1px;
+  text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+  font-size: large;
   
+}
+#headerTitle{
+  color: red;
+  font-size: xx-large;
+  
+}
+
+.shareBtn{
+  color: #011F26;
+}
+
+.shareBtn:hover{
+  color: red;
 }
 /* style for Find Gas Button */
 .custombutton1{
@@ -55,6 +69,10 @@ a{
 }
 
 /* style for Report a price drop card */
+div.card.newCard:hover{
+  background-color: yellow;
+  color: red;
+}
 
 div.card{
   align-items: center;
@@ -67,10 +85,10 @@ div.card{
   max-width: 800px;
   max-height: 400px;
   margin-top: 20px;
- 
+  font-size: 25px;
   
 }
-
+/* adjust card with gas station image */
 #centerCard{
   
   display: flex;

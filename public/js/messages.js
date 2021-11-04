@@ -1,5 +1,6 @@
 const { default: axios } = require('axios');
 const {format_date, format_amount, get_emoji, get_date} = require('../../utils/helpers');
+const router = require('../../controllers/api/user');
 
 
 
@@ -11,7 +12,7 @@ async function archiveMsg(msg) {
         //   headers: { 'Content-Type': 'application/json' },
           {
             //   user_id: req.session.user_id
-              user_id: 1,
+              user_id: seshUser,
               text: msg,
           }
         ).then(function(response){

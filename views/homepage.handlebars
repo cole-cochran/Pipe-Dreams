@@ -23,7 +23,11 @@
 
 <!-- Chat Area -->
 {{#if logged_in}}
-<ul id="messages"></ul>
+<ul id="messages">
+  {{#each messages as |message|}}
+  <li>{{message.date}}: {{message.text}}</li>
+  {{/each}}
+</ul>
     <form id="form" action="">
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>

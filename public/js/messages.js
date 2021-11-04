@@ -13,7 +13,7 @@ async function archiveMsg(msg) {
         //   headers: { 'Content-Type': 'application/json' },
           {
             //   user_id: req.session.user_id
-              user_id: seshUser,
+              user_id: 1,
               text: msg,
           }
         ).then(function(response){
@@ -26,22 +26,22 @@ async function archiveMsg(msg) {
 
 async function renderMessages() {
     axios.get('http://localhost:3001/api/messages').then(function(response){
-        console.log('response = ',response)
+        return response;
     }).catch((err) => {
         console.log('error = ',err)
     });
 }
 
-async function renderMsg(msg) {
+// async function renderMsg(msg) {
     
-    axios.get(`http://localhost:3001/api/users/${userId}`)
-    .then(function (response){
-        console.log('response = ',response)
-        console.log('msg = ',msg)
-        return `${response.username}: ${msg}`
-    }).catch((err) => {
-        console.log('error = ',err)
-    });
-}
+//     axios.get(`http://localhost:3001/api/users/${userId}`)
+//     .then(function (response){
+//         console.log('response = ',response)
+//         console.log('msg = ',msg)
+//         return `${response.username}: ${msg}`
+//     }).catch((err) => {
+//         console.log('error = ',err)
+//     });
+// }
 
-module.exports = {archiveMsg, renderMsg}
+module.exports = {archiveMsg, renderMessages}

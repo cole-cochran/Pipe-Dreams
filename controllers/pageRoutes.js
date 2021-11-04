@@ -9,8 +9,11 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'../index.html'));
 });
 
+router.get('/loginSignUp', (req, res) => {
+    res.sendFile(path.join(__dirname,'../loginorsignup.html'));
+});
 // sign-up route
-router.get('/sign-up', (req, res) => {
+router.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname,'../sign-up.html'));
 });
 

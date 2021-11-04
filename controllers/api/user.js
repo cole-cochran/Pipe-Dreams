@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const User = require('../../models/User');
-let seshUser;
+
 
 // The `/api/categories` endpoint
 
@@ -43,8 +43,8 @@ router.post('/', async (req, res) => {
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user_id = dbUserData.user_id
-      seshUser = dbUserData.user_id
+      req.session.user_id = dbUserData.user_id;
+      
 
       res.status(200).json(dbUserData);
     });
@@ -78,16 +78,17 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-
+    
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user_id = dbUserData.id;
-      seshUser = dbUserData.id;
+      req.session.user_id = dbUserData.user_id;
+      
 
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
+  
     });
   } catch (err) {
     console.log(err);

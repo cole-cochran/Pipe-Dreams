@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #011F26;
 }
 
@@ -6,86 +6,82 @@ body{
 
 
 /* style for login icon in Nav Bar */
-a{
-  color: black;
+a {
+  color: #F23005;
 }
+
 /* style for nav bar */
-.bg-light{
+.bg-light {
   position: relative;
   padding: 0 0 5px 0;
   background-color: #F2CB05 !important;
   color: white;
-  text-shadow: rgb(255, 255, 255) 1px 1px 1px;
+  text-shadow: rgb(10, 10, 10) 1px 1px 1px;
   font-size: large;
-  
+
 }
-#headerTitle{
+
+#headerTitle {
+  position: relative;
+  top: 10px;
   color: red;
+  font-weight: bolder;
   font-size: xx-large;
-  
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
-.shareBtn{
-  color: #011F26;
-  text-shadow: white 1px 1px 1px 1px;
+.shareBtn {
+  color: #F23005;
+  text-shadow: rgb(5, 5, 5) 1px 1px 1px 1px;
 }
 
-.shareBtn:hover{
+.shareBtn:hover {
   color: red;
 }
+
 /* style for Find Gas Button */
-.custombutton1{
+.custombutton1 {
+  background-color: rgba(219, 117, 34, 0.966);
+  display: flex;
+  justify-content: center;
   align-items: center;
-  top: 10px;
-  display: block;
-  margin: 20px;
-  background-color: #F28705;
-  box-shadow: black 1px 3px 3px 3px;
-  text-shadow: black 2px 3px 1px;
-  font-weight: bolder;
-  max-width: 475px;
-  position: relative;
-  left: 471px;
-  margin-top: 50px;
+  margin: 1em;
 }
+
 /* style for Favorite Locations button */
-.custombutton{
+.custombutton {
+
+  display: flex;
+  justify-content: center;
   align-items: center;
-  top: 10px;
-  display: block;
-  margin: 20px;
-  background-color: #F23D4C;
-  box-shadow: black 1px 3px 3px 3px;
-  text-shadow: black 2px 3px 1px;
-  font-weight: bolder;
-  max-width: 475px;
-  position: relative;
-  left: 471px;
-  
+  margin: 1em;
 
 }
+
 /* hover effects for Favorite Locations */
-.custombutton:hover{
- background-color: red;
+.custombutton:hover {
+  background-color: red;
 }
 
-.heartIcon{
-position: relative;
-right: 20px;
+.heartIcon {
+  position: relative;
+  right: 20px;
+
 }
 
-.searchIcon{
+.searchIcon {
   position: relative;
   right: 65px;
 }
 
 /* style for Report a price drop card */
-div.card.newCard:hover{
+div.card.newCard:hover {
   background-color: yellow;
   color: red;
 }
 
-div.card{
+div.card {
   align-items: center;
   top: 10px;
   background-color: #F23005;
@@ -97,21 +93,22 @@ div.card{
   max-height: 400px;
   margin-top: 20px;
   font-size: 25px;
-  
+
 }
+
 /* adjust card with gas station image */
-#centerCard{
-  
+#centerCard {
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.newCard{
+.newCard {
   padding: 15px;
 }
 
-.imageAjustments{
+.imageAjustments {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,138 +116,98 @@ div.card{
   max-height: 300px;
 }
 
-/* -------------------------------- User Sign Up Page------------------------------------------------------------------- */
-.signup{
+/* -------------------------------- Sign Up ONLY Page------------------------------------------------------------------- */
+.signup {
   display: flex;
   color: white;
   max-width: 800px;
-  max-height: 500px; 
+  max-height: 500px;
   padding: 30px;
   position: relative;
-  left: 450px;
-  top: 80px;
-}
-
-/* -------------------------------- User Login Page------------------------------------------------------------------ */
-
-
-
-
-.login{
-  display: flex;
-  color: white;
-  max-width: 800px;
-  max-height: 500px; 
-  padding: 30px;
-  position: relative;
-  left: 450px;
+  left: 680px;
   top: 80px;
 }
 
 /* --------------------- LOG IN OR SIGN UP PAGE--------------------------------------- */
-.classLogin :hover{
+
+.classLogin :hover {
   color: red;
 }
-.classLogin{
+
+.loginOrSignUpDiv {
+  position: relative;
+  left: 500px;
+  display: block;
+
+}
+
+/* 
+.classLogin {
   position: fixed;
-  left: 550px;
+  left: 800px;
   top: 200px;
-  
-}
+} */
 
-#middle{
+/* .classSignup {
   position: fixed;
-  left: 725px;
+  left: 1000px;
+  bottom: 641px;
+
+} */
+
+#middle {
   color: red;
-  font-size: 40px;
-  top: 210px;
-  
-}
+  position: relative;
+  left: 50px;
+  font-size: xx-large;
 
-.classSignup{
-position: fixed;
-left: 800px;
-bottom: 464px;
 
 }
 
-/* ---------------------------------------------login and sign up forms------------------------------------ */
-#header{
+/* ----------------Log in only page-------------------- */
+#labelColor {
+  color: white;
+}
+
+#passwordColor {
+  color: white;
+}
+
+
+
+
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 400px;
+  top: 100px;
+
+}
+
+/* ---------------------------------------------login and sign up **FORMS**----------------------------------------- */
+/* #header effects all nav bar headers EXCEPT for home page nav bar */
+#header {
   color: #F23005;
   display: block;
   position: relative;
-  left: 550px;
+  left: 750px;
   text-shadow: black;
- 
+
 }
 
 
-h2{
+h2 {
   padding: 25px;
   color: yellow;
-  
+
 }
 
 
 
-.forms{
+.forms {
   display: block;
-
-}
-
-
-/* ------------------------------------------Search for gas near me page-------------------------- */
-
-
-#searchBar{
-  position: relative;
-  top: 100px;
-  left: 500px;
-  max-width: 400px;
-  
-}
-
-#gpsIcon{
-  color: blue;
-  position: relative;
-  top: 200px;
-  left: 500px;
-}
-
-#favIcon{
-  color: red;
-  position: relative;
-  left: 100px;
-  top: 300px;
-}
-#gpsTxt{
-color:white;
-position: relative;
-left: 100px;
-}
-
-/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
-/* Large desktops and laptops */
-@media (min-width: 1200px) {
-
-}
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
 
 }

@@ -1,24 +1,64 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
+<!-- BUTTON AREA -->
+{{#if logged_in}}
+<div class="btnCardFlex">
+<div class="d-grid gap-2">
+<button type="button" class="btn btn-success btn-lg custombutton1" onclick="window.location.href='./mapbox.html'"><i class="fa fa-fw fa-search searchIcon"> </i>Find Gas</button>
+<button type="button" class="btn btn-danger btn-lg custombutton"><i class="fas fa-heart heartIcon"></i>Favorite Locations</i></button>
+</div>
+{{/if}}
+
+<!-- Card AREA -->
+<div id="centerCard">
+<div class="card newCard">
+  <img src="./public/images/jean-christophe-gougeon-t8bDFvkhNQY-unsplash.jpg" class="card-img-top imageAjustments" alt="image of gas station">
+   <div class="card-body">
+    <p class="card-text">Report a Price Change</p>
   </div>
 </div>
-{{/each}}
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  
+
+<!-- Chat Area -->
+{{#if logged_in}}
+<ul id="messages">
+  {{#each messages as |message|}}
+  <li>{{message.date}}: {{message.text}}</li>
+  {{/each}}
+</ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+    {{/if}}
+
+<script src="../public/js/logout.js"></script>
+
+  </body>
+
+  <script src="http://localhost:3001/socket.io/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+      var socket = io();
+    
+      var messages = document.getElementById('messages');
+      var form = document.getElementById('form');
+      var input = document.getElementById('input');
+    
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit('chat message', input.value);
+          input.value = '';
+        }
+      });
+    
+      socket.on('chat message', function(msg) {
+        var item = document.createElement('li');
+        item.textContent = msg;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    </script>
+

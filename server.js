@@ -11,6 +11,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 const {archiveMsg, renderMsg} = require('./public/js/messages')
 const axios = require('axios').default;
+require('dotenv').config();
 
 
 const sequelize = require('./config/connection');

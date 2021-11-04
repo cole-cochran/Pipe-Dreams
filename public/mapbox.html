@@ -19,7 +19,7 @@ body { margin: 0; padding: 0; }
 </head>
 <body> 
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiY29sZS1jb2NocmFuIiwiYSI6ImNrdmlnZmtkMjBicGIyb3BrdWxsdzI0aW4ifQ.j8T0PTzOZhOeFHglpSASyw';
+mapboxgl.accessToken = process.env.APP_MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',

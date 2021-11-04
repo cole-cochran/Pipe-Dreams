@@ -8,7 +8,7 @@ const User = require('../../models/User');
 router.get('/', async (req, res) => {
   try {
     const messageData = await Message.findAll({
-      order: ['date', 'DESC']
+      order: ['date']
     })
     res.status(200).json(messageData);
   } catch (err) {

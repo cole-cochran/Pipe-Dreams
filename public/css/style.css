@@ -129,29 +129,38 @@ div.card {
 }
 
 /* --------------------- LOG IN OR SIGN UP PAGE--------------------------------------- */
+
 .classLogin :hover {
   color: red;
 }
 
+.loginOrSignUpDiv {
+  position: relative;
+  left: 500px;
+  display: block;
+
+}
+
+/* 
 .classLogin {
   position: fixed;
   left: 800px;
   top: 200px;
-}
+} */
 
-.classSignup {
+/* .classSignup {
   position: fixed;
   left: 1000px;
   bottom: 641px;
 
-}
+} */
 
 #middle {
-  position: fixed;
-  left: 950px;
   color: red;
-  font-size: 40px;
-  top: 210px;
+  position: relative;
+  left: 50px;
+  font-size: xx-large;
+
 
 }
 

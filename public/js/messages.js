@@ -2,6 +2,7 @@ const { default: axios } = require('axios');
 const {format_date, format_amount, get_emoji, get_date} = require('../../utils/helpers');
 const router = require('../../controllers/api/user');
 const session = require('express-session');
+const Message = require('../../models/Message')
 
 
 
@@ -12,9 +13,9 @@ async function archiveMsg(msg) {
             user_id: 1,
             text: msg
         });
-        res.status(200).json(messageData);
+        console.log('message archived');
       } catch (err) {
-        res.status(400).json(err);
+        console.log(err);
       }
     };
 

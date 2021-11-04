@@ -58,8 +58,9 @@ io.on('connection', (socket) => {
 
 io.on('connection', (socket) => {
   socket.on('chat message', async (msg) => {
+    const now = new Date()
     console.log('message: ' + msg);
-    io.emit('chat message', msg);
+    io.emit('chat message', `${now}: ${msg}`);
     archiveMsg(msg);
     // renderMsg();
 

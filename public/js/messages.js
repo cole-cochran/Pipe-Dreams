@@ -7,41 +7,17 @@ const session = require('express-session');
 
 //post message to DB
 async function archiveMsg(msg) {
-
-        // const response = await 
-        axios.post('http://localhost:3001/api/messages', 
-        //   headers: { 'Content-Type': 'application/json' },
-          {
-            //   user_id: req.session.user_id
-              user_id: 1,
-              text: msg,
-          }
-        ).then(function(response){
-            console.log('message archived')
-        }).catch((err) => {
-            console.log('error = ',err)
+    try {
+        const messageData = await Message.create({
+            user_id: 1,
+            text: msg
         });
-}
+        res.status(200).json(messageData);
+      } catch (err) {
+        res.status(400).json(err);
+      }
+    };
 
 
-async function renderMessages() {
-    axios.get('http://localhost:3001/api/messages').then(function(response){
-        return response;
-    }).catch((err) => {
-        console.log('error = ',err)
-    });
-}
 
-// async function renderMsg(msg) {
-    
-//     axios.get(`http://localhost:3001/api/users/${userId}`)
-//     .then(function (response){
-//         console.log('response = ',response)
-//         console.log('msg = ',msg)
-//         return `${response.username}: ${msg}`
-//     }).catch((err) => {
-//         console.log('error = ',err)
-//     });
-// }
-
-module.exports = {archiveMsg, renderMessages}
+module.exports = {archiveMsg}

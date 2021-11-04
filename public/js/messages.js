@@ -33,7 +33,7 @@ async function renderMessages() {
 }
 
 async function renderMsg(msg) {
-    console.log(sessionStorage)
+    
     axios.get(`http://localhost:3001/api/users/${userId}`)
     .then(function (response){
         console.log('response = ',response)

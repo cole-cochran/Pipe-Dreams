@@ -5,6 +5,7 @@ const searchTerm = document.getElementById().value.trim();
 const messageText = document.getElementById().value.trim();
 let longitude;
 let latitude;
+const shareBtn = document.getElementById('share')
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -55,3 +56,10 @@ searchBtn.addEventListener('submit', function(event) {
       }
 
 });
+
+shareBtn.addEventListener('click', function(event){
+  const appUrl = document.URL;
+  console.log(appUrl);
+  navigator.clipboard.writeText(appUrl);
+    
+  });

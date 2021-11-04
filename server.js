@@ -59,7 +59,7 @@ io.on('connection', (socket) => {
 io.on('connection', (socket) => {
   socket.on('chat message', async (msg) => {
     console.log('message: ' + msg);
-    io.emit('chat message', renderMsg(msg,req.session.user_id));
+    io.emit('chat message', renderMsg(msg));
     archiveMsg(msg);
     // renderMsg();
 

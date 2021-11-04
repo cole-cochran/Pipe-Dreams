@@ -34,7 +34,7 @@ router.get('/login', (req, res) => {
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-        res.redirect('/mapbox.html');
+        res.redirect('../public/mapbox.html');
         return;
     } else {
         res.sendFile(__dirname + '/userpage.html');
@@ -43,7 +43,7 @@ router.get('/login', (req, res) => {
 
 // allows access to mapbox if signed in already
 router.get('/mapbox', withAuth, (req, res) => {
-    res.sendFile(path.join(__dirname,'../mapbox.html'));
+    res.sendFile(path.join(__dirname,'../public/mapbox.html'));
 });
 
 // redirects mapbox access to login or signup if not logged in

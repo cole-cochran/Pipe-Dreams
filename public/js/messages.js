@@ -1,6 +1,7 @@
 const { default: axios } = require('axios');
 const {format_date, format_amount, get_emoji, get_date} = require('../../utils/helpers');
 const router = require('../../controllers/api/user');
+const session = require('express-session');
 
 
 
@@ -31,8 +32,9 @@ async function renderMessages() {
     });
 }
 
-async function renderMsg(msg,id) {
-    axios.get(`http://localhost:3001/api/users/${id}`)
+async function renderMsg(msg) {
+    console.log(sessionStorage)
+    axios.get(`http://localhost:3001/api/users/${userId}`)
     .then(function (response){
         console.log('response = ',response)
         console.log('msg = ',msg)

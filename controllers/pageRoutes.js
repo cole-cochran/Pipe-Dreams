@@ -1,15 +1,28 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const path = require('path')
+const Message = require('../models/Message')
 // const { Message, User } = require('../models');
 // const UserHistory = require(../models/User_history);
 
 // homepage route
-router.get('/', (req, res) => {
-    res.render('homepage', {logged_in: req.session.loggedIn});
-    console.log(req.session);
-    // res.sendFile(path.join(__dirname,'../index.html'));
-});
+router.get('/', async (req, res) => {
+    try {
+        const dbMessageData = await Message.findAll({});
+    
+        const messages = dbMessageData.map((message) =>
+          message.get({ plain: true })
+        );
+        // Send over the 'loggedIn' session variable to the 'homepage' template
+        res.render('homepage', {
+          messages,
+          logged_in: req.session.loggedIn,
+        });
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    });
 
 // login or sign up route
 router.get('/loginSignUp', (req, res) => {

@@ -3,7 +3,7 @@
 <div class="btnCardFlex">
 <div class="d-grid gap-2">
 <button type="button" class="btn btn-success btn-lg custombutton1" onclick="window.location.href='./mapbox.html'"><i class="fa fa-fw fa-search searchIcon"> </i>Find Gas</button>
-<button type="button" class="btn btn-danger btn-lg custombutton"><i class="fas fa-heart heartIcon"></i>Favorite Locations</i></button>
+<button type="button" class="btn btn-danger btn-lg custombutton"><i class="fas fa-heart heartIcon"></i>Favorite Locations (Coming Soon!)</i></button>
 </div>
 {{/if}}
 
@@ -12,7 +12,11 @@
 <div class="card newCard">
   <img src="./public/images/jean-christophe-gougeon-t8bDFvkhNQY-unsplash.jpg" class="card-img-top imageAjustments" alt="image of gas station">
    <div class="card-body">
-    <p class="card-text">Report a Price Change</p>
+     {{#if logged_in}}
+    <p class="card-text">Report a Price Change Below!</p>
+    {{else}}
+    <p class="card-text">Log in or sign up to use Pipe Dreams!</p>
+    {{/if}}
   </div>
 </div>
 </div>
@@ -34,6 +38,7 @@
     {{/if}}
 
 <script src="../public/js/logout.js"></script>
+<script src="../public/js/index.js"></script>
 
   </body>
 

@@ -6,9 +6,12 @@ const path = require('path')
 
 // homepage route
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'../index.html'));
+    res.render('homepage', {logged_in: req.session.loggedIn});
+    console.log(req.session);
+    // res.sendFile(path.join(__dirname,'../index.html'));
 });
 
+// login or sign up route
 router.get('/loginSignUp', (req, res) => {
     res.sendFile(path.join(__dirname,'../loginorsignup.html'));
 });

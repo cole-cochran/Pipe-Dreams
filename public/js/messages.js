@@ -2,6 +2,7 @@ const { default: axios } = require('axios');
 const {format_date, format_amount, get_emoji, get_date} = require('../../utils/helpers');
 
 
+
 //post message to DB
 async function archiveMsg(msg) {
 
@@ -29,8 +30,8 @@ async function renderMessages() {
     });
 }
 
-async function renderMsg(msg) {
-    axios.get(`http://localhost:3001/api/users/${req.session.user_id}`)
+async function renderMsg(msg,id) {
+    axios.get(`http://localhost:3001/api/users/${id}`)
     .then(function (response){
         console.log('response = ',response)
         console.log('msg = ',msg)

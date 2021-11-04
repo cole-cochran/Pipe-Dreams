@@ -32,7 +32,7 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     {{#if logged_in}}
-    <a href="/logout"><i class="fa fa-fw fa-user"></i> Logout</a> 
+    <button id='logout'><i class="fa fa-fw fa-user"></i> Logout</button> 
     {{else}}
     <a href="/loginSignUp"><i class="fa fa-fw fa-user"></i> Login/Sign Up</a> 
     {{/if}}
@@ -42,4 +42,6 @@
 </nav>
 
 {{{body}}}
+
+
 </html>

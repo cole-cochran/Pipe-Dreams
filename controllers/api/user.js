@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const User = require('../../models/User');
+let seshUser;
 
 // The `/api/categories` endpoint
 
@@ -42,6 +43,8 @@ router.post('/', async (req, res) => {
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user_id = dbUserData.user_id
+      seshUser = dbUserData.user_id
 
       res.status(200).json(dbUserData);
     });
@@ -80,6 +83,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.user_id = dbUserData.id;
+      seshUser = dbUserData.id;
 
       res
         .status(200)

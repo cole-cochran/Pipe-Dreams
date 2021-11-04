@@ -1,21 +1,22 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
+const path = require('path')
 // const { Message, User } = require('../models');
 // const UserHistory = require(../models/User_history);
 
 // homepage route
 router.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname,'../index.html'));
 });
 
 // sign-up route
 router.get('/sign-up', (req, res) => {
-    res.sendFile(__dirname + '/sign-up.html');
+    res.sendFile(path.join(__dirname,'../sign-up.html'));
 });
 
 // login route
 router.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/login.html');
+    res.sendFile(path.join(__dirname,'../login.html'));
 });
 
 // chat route - sends logged in user to chat, others to signup/login
@@ -42,7 +43,7 @@ router.get('/login', (req, res) => {
 
 // allows access to mapbox if signed in already
 router.get('/mapbox', withAuth, (req, res) => {
-    res.sendFile(__dirname + '/mapbox.html');
+    res.sendFile(path.join(__dirname,'../mapbox.html'));
 });
 
 // redirects mapbox access to login or signup if not logged in

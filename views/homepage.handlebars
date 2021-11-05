@@ -29,7 +29,7 @@
 {{#if logged_in}}
 <ul id="messages">
   {{#each messages as |message|}}
-  <li>{{helpers.get_date message.date}}: {{message.text}}</li>
+  <li>{{get_date message.date}}: {{message.text}}</li>
   {{/each}}
 </ul>
     <form id="form" action="">

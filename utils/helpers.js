@@ -1,8 +1,7 @@
 module.exports = {
-  get_date: () => {
-    let now = new Date();
-    now = now.toString()
-    now = now.substring(0, now.length - 33);
-    return now;
+  format_date: (date) => {
+    date = date.toString()
+    date = date.substring(0, date.length - 33);
+    return date;
   }
 };

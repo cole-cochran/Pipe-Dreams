@@ -1,6 +1,4 @@
 //event handlers for homepage
-// const searchBtn = document.getElementById()
-// const histBtn = document.getElementById()
 const shareBtn = document.getElementById('share')
 
 

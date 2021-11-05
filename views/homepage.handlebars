@@ -3,7 +3,7 @@
 <div class="btnCardFlex">
 <div class="d-grid gap-2">
 <button type="button" class="btn btn-success btn-lg custombutton1" onclick="window.location.href='./mapbox.html'"><i class="fa fa-fw fa-search searchIcon"> </i>Find Gas</button>
-<button type="button" class="btn btn-danger btn-lg custombutton"><i class="fas fa-heart heartIcon"></i>Favorite Locations</i></button>
+<button type="button" class="btn btn-danger btn-lg custombutton"><i class="fas fa-heart heartIcon"></i>Favorite Locations (Coming Soon!)</i></button>
 </div>
 {{/if}}
 
@@ -12,7 +12,11 @@
 <div class="card newCard">
   <img src="./public/images/jean-christophe-gougeon-t8bDFvkhNQY-unsplash.jpg" class="card-img-top imageAjustments" alt="image of gas station">
    <div class="card-body">
-    <p class="card-text">Report a Price Change</p>
+     {{#if logged_in}}
+    <p class="card-text">Report a Price Change Below!</p>
+    {{else}}
+    <p class="card-text">Log in or sign up to use Pipe Dreams!</p>
+    {{/if}}
   </div>
 </div>
 </div>
@@ -23,13 +27,18 @@
 
 <!-- Chat Area -->
 {{#if logged_in}}
-<ul id="messages"></ul>
+<ul id="messages">
+  {{#each messages as |message|}}
+  <li>{{format_date message.date}}: {{message.text}}</li>
+  {{/each}}
+</ul>
     <form id="form" action="">
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
     {{/if}}
 
 <script src="../public/js/logout.js"></script>
+<script src="../public/js/index.js"></script>
 
   </body>
 
@@ -57,4 +66,36 @@
         window.scrollTo(0, document.body.scrollHeight);
       });
     </script>
+    {{#unless logged_in}}
+<footer class="dark text-center text-white fixed-bottom">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0 ">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/cole-cochran/Pipe-Dreams" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+ 
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Pipe Dreams
+  </div>
+
+</footer>
+{{/unless}}
 

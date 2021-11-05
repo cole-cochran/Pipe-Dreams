@@ -11,6 +11,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 const {archiveMsg, renderMsg} = require('./public/js/messages')
 const axios = require('axios').default;
+require('dotenv').config();
 
 
 const sequelize = require('./config/connection');
@@ -58,8 +59,8 @@ io.on('connection', (socket) => {
 
 io.on('connection', (socket) => {
   socket.on('chat message', async (msg) => {
-    console.log('message: ' + msg);
-    io.emit('chat message', renderMsg(msg));
+    let now = new Date();
+    io.emit('chat message', `${helpers.format_date(now)}: ${msg}`);
     archiveMsg(msg);
     // renderMsg();
 

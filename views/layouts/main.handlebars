@@ -25,6 +25,7 @@
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages > li { padding: 0.5rem 1rem; }
       #messages > li:nth-child(odd) { background: #efefef; }
+      #messages > li:nth-child(even) { background: #efefef; }
     </style>
   </head>
   <body>
@@ -36,12 +37,12 @@
     {{else}}
     <a href="/loginSignUp"><i class="fa fa-fw fa-user"></i> Login/Sign Up</a> 
     {{/if}}
-    <span class="navbar-brand mb-0 h1"> <p id="headerTitle">Pipe Dreams!</p></span>
-    <i class="fas fa-share-square shareBtn">share</i>
+    <span class="navbar-brand mb-0 h1"> <a href="/" id="headerTitle">Pipe Dreams!</a></span>
+    <div id="share"<i class="fas fa-share-square">Share</i></div>
   </div>
 </nav>
 
 {{{body}}}
 
-
+</body>
 </html>
